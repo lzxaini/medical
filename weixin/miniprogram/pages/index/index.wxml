@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+  <van-button type="info" bindtap="test1" custom-class="mr10">防抖</van-button>
+  <van-button type="primary" bindtap="test2" custom-class="mr10">节流</van-button>
+  <van-button type="warning" bindtap="test3" custom-class="mr10">请求</van-button>
+</view>
