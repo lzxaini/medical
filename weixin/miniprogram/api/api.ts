@@ -12,7 +12,11 @@ import request from "./request.js"
 export function testFun () {
   //这里调用request.js里面封装的请求方法
   return request({
-    url: "/test",
-    method: 'get',
+    url: "/login",
+    method: 'post',
+    data: {
+      account: '0001',
+      password: '123456',
+    }
   })
 }
