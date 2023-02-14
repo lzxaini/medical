@@ -2,7 +2,7 @@
  * @Author: lzx
  * @Date: 2023-02-11 13:47:52
  * @LastEditors: lzx
- * @LastEditTime: 2023-02-14 12:41:51
+ * @LastEditTime: 2023-02-14 16:27:21
  * @Description: Fuck Bug
  * @FilePath: \medical\medical-service\routes\user.js
  */
@@ -54,10 +54,18 @@ router.post('/register', function (req, res, next) {
 });
 // 获取用户信息
 router.get('/info', function (req, res, next) {
-  res.send({
-    code: 0,
-    data: req.auth,
-    message: '获取成功！'
+  // 检测用户是否存在
+  connection.query('select account,userName,headPortrait,isAdmin,createTime,updateTime,status from user where account=?', [req.auth.account], function (error, results, fields) {
+    if (error) throw error // 错误抛出
+    if (results) {
+      res.send({
+        code: 0,
+        data: results[0],
+        message: '获取成功！'
+      })
+    } else {
+      registerUser(params, res) // 注册用户
+    }
   })
 });
 // 修改用户信息
