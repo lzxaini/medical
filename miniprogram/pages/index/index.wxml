@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<!-- <view class="container">
+  <van-button type="info" bindtap="test1" custom-class="mr10">防抖</van-button>
+  <van-button type="primary" bindtap="test2" custom-class="mr10">节流</van-button>
+  <van-button type="warning" bindtap="test3" custom-class="mr10">请求</van-button>
+</view> -->
+<view style="overflow: auto;height: calc(100vh - 150rpx);">
+  <van-search value="{{ searchContent }}" placeholder="搜索内容" bind:change="onChange" bind:search="onSearch" background="#4266d6" />
+  <view>
+    <swiper style="height: 400rpx;" indicator-dots>
+      <swiper-item>
+        <image style="width: 100%;" src="../../assets/images/art.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+        <image style="width: 100%;" src="../../assets/images/a.webp"></image>
+      </swiper-item>
+    </swiper>
+    <van-notice-bar
+    color="#1989fa"
+  background="#ecf9ff"
+  left-icon="volume-o"
+  text="{{inform}}"
+/>
+    <view style="width: 150rpx;height: 80rpx;margin-top: 50rpx;margin-left: 20rpx;line-height: 50rpx;display: flex;">
+      <span class="shu">
+      </span>
+      <span class="title">
+        今日资讯
+      </span>
+    </view>
+  </view>
+  <view class="box">
+    <view class="item" wx:for="{{pushData}}" wx:for-item="item" data-src="{{item}}" bindtap="goDetail">
+      <view class="img" wx:if="{{item.illustration}}">
+      <image style="width: 100%;height: 100%;" src="{{item.illustration}}" mode=""/>
+      </view>
+      <view class="img" wx:else>
+      <image class="sign" src="../../assets/images/bg.png" mode=""/>
+      </view>
+      <view class="subTitle">
+        {{item.title}}
+      </view>
+      <view class="creator">
+      作者：{{item.creator}}
+      </view>
+    </view>
+    
+  </view>
+</view>

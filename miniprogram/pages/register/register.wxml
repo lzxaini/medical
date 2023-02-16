@@ -1,0 +1,37 @@
+<!--pages/login/login.wxml-->
+<view class="login">
+  <view class="top">
+    <view class="topImg">
+  <image style="height: 27vh;width: 100%;" src="../../assets/images/logbg.jpg" alt=""/>
+    </view>
+    <view class="title">
+      中医药知识移动学习平台
+    </view>
+  </view>
+  <view class="main">
+
+    <van-cell-group>
+    <view>
+      <span style="color:#646566;font-size: 14px;margin:0  50rpx 0 30rpx; "  >上传头像：</span>
+      <van-uploader deletable
+  file-list="{{ fileList }}"
+  max-count="1"
+  accept="image"
+  bind:after-read="afterRead"
+  bind:delete="delete"
+/>
+    </view>
+     
+      <van-field required custom-class="userName" model:value="{{ account }}" label="账号" placeholder="请输入账号（用于登录）" error-message="{{showAccountError}}" />
+      <van-field required custom-class="userName" model:value="{{ userName }}" label="用户名" placeholder="请输入用户名" error-message="{{showUserError}}" />
+      <van-field required type="password" model:value="{{ pwd }}" label="密码" placeholder="请输入密码" error-message="{{showPwdError}}" />
+      <van-field required type="password" model:value="{{ confirmPwd }}" label="确认密码" placeholder="请再次确认密码" error-message="{{showConfirmPwdError}}" />
+    </van-cell-group>
+    <view class="box">
+      <van-button color="#195ED7" type="info" custom-class="loginBtn" bind:click="login" size="large">注册</van-button>
+    </view>
+    <view class="goLogin" bindtap="goLogin">去登陆</view>
+  </view>
+</view>
+<van-notify id="van-notify" />
+<van-dialog id="van-dialog"  confirm-button-color="#195ED7"/>

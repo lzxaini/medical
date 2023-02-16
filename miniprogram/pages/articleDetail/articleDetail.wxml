@@ -1,0 +1,24 @@
+<van-nav-bar
+  title="{{title}}"
+  left-text="返回"
+  left-arrow
+  bind:click-left="onClickLeft"
+  bind:click-right="onClickRight"
+>  <view slot="right" >{{creator}}</view></van-nav-bar>
+<image style="width: 100%;border-radius: 50rpx;" src="{{illustration}}" mode=""/>
+
+<view class="content">
+  {{content}} 
+</view>
+<view class="bottom">
+  <view class="item">
+    更新时间：{{updateTime}}
+  </view>
+  <view class="item">
+    创建时间：{{createTime}}
+  </view>
+</view>
+  <!-- <van-icon name="like-o"  wx:if="{{!light}}"/> -->
+
+
+

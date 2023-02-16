@@ -1,0 +1,70 @@
+// .mr10{
+//   margin-top: 20rpx;
+// }/**index.wxss**/
+ 
+/*轮播控件*/
+ 
+.home-swiper {
+  width: 95%;
+  height: 360rpx;
+}
+ 
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+.shu{
+  width: 8rpx;height: 50rpx;background-color: #4266d6;display: inline-block;
+}
+.title{
+  font-size: 14px;
+  display: inline-block;
+  margin-left: 5rpx;
+  color: #4266d6;
+}
+page{
+  background-color: #F5F5F5;
+}
+.box{
+  width: 90vw;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: space-between;
+  .item{
+    width: 43vw;
+    height: 350rpx;
+    margin-top: 5rpx;
+    border-radius: 20rpx;
+    margin-bottom: 20rpx;
+    position: relative;
+    background-color: #FFFFFF;
+    .img{
+      height: 50%;
+      width: 100%;
+      border-radius: 20rpx 20rpx 0 0 ;
+      background-color: #4266d6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .sign{
+      width: 80rpx;
+      height: 65rpx;
+    }
+    .subTitle{
+      font-size: 12px;
+      width: 95%;
+      margin: 10rpx auto;
+      font-weight: bold;
+    }
+    .creator{
+      position: absolute;
+      right: 10rpx;
+      bottom: 10rpx;
+      font-size: 12px;
+      color: #B2B3B6 ;
+    }
+  }
+}

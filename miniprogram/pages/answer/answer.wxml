@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<view class="container">
+  <image style="position: absolute;left: 0 ;top: 0;width: 100%;" src="{{currentQuestion.imgUrl}}" mode=""/>
+  <view class="question">
+    <view class="question-title"><van-tag type="primary">单选</van-tag>
+{{currentQuestion.topicInfo}}</view>
+    <van-radio-group class="question-options" bind:change="selectOption" value="{{currentAnswerIndex}}" disabled="{{disableBtn}}">
+      <van-radio value="0" name="A" custom-class="{{hello}}"> 
+      A. {{ currentQuestion.optionList[0] }}
+    </van-radio>
+    <van-radio value="1" name="B">
+      B. {{ currentQuestion.optionList[1] }}
+    </van-radio>
+    <van-radio value="2" name="C">
+      C. {{ currentQuestion.optionList[2] }}
+    </van-radio>
+    <van-radio value="3" name="D">
+      D. {{ currentQuestion.optionList[3] }}
+    </van-radio>
+    </van-radio-group>
+  </view>
+  <view class="buttons">
+    <van-button wx:if="{{currentQuestionIndex > 0}}" type="info" bind:tap="prevQuestion">上一题</van-button>
+    <van-button wx:if="{{currentQuestionIndex < questions.length - 1}}" type="info" bind:tap="nextQuestion">下一题</van-button>
+    <van-button wx:if="{{currentQuestionIndex == questions.length - 1}}" type="info" bind:tap="nextQuestion">提交</van-button>
+
+  </view>
+  <view class="realAnswer" wx:if="{{currentAnswerIndex&&currentQuestion.correct!=currentAnswerIndex}}">
+   答案<span style="color: skyblue;font-weight:bold">{{currentQuestion.correct}}</span>您选择    <span style="color:red;font-weight:bold"> {{currentAnswerIndex}}</span>
+  </view>
+  <view class="realAnswer" wx:if="{{currentAnswerIndex&&currentQuestion.correct==currentAnswerIndex}}" style="background-color: transparent;">
+   <span style="color: green;font-weight:bold">回答正确</span>
+  </view>
+</view>

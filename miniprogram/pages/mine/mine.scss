@@ -1,0 +1,48 @@
+.Info {
+  width: 100vw;
+  height: 360rpx;
+  position: relative;
+  background-color: #4266d6;
+
+}
+
+.avator {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  margin-left: 30rpx;
+  border: 3px solid #fff;
+}
+
+.bottomArea {
+  width: 100%;
+  height: 180rpx;
+  align-items: center;
+  display: flex;
+}
+
+.topArea {
+  width: 100%;
+  height: 180rpx;
+}
+page{
+  background-color:  rgba(255, 255, 255, 1);
+}
+.navList{
+  margin-top: 30rpx;
+  width: 100%;
+  height: 800rpx;
+
+  .item{
+    display: flex;
+    align-items: center;
+    width: 95%;
+    box-shadow: 0px 1px 5px 0px rgba(202, 204, 204, 20);
+    font-size: 14px;
+    height: 120rpx;
+    border-radius: 20rpx;
+    background-color: #fff;
+    margin: 10px auto;
+    position: relative;
+  }
+}

@@ -1,0 +1,26 @@
+<!--pages/login/login.wxml-->
+<view class="login">
+  <view class="top">
+    <view class="topImg">
+      <image style="height: 27vh;width: 100%;" src="../../assets/images/logbg.jpg" alt=""/>
+
+    </view>
+    <view class="title">
+      中医药知识移动学习平台
+    </view>
+  </view>
+  <view class="main">
+
+    <van-cell-group>
+      <van-field custom-class="userName"  model:value="{{ userName }}" label="用户名" placeholder="请输入用户名" bind:change="setUserName"  error-message="{{showUserError}}"/>
+      <van-field type="password" model:value="{{ pwd }}" label="密码" placeholder="请输入密码" error-message="{{showPwdError}}" />
+    </van-cell-group>
+    <view class="box">
+      <van-button color="#195ED7" type="info" custom-class="loginBtn" bind:click="login" size="large">登录</van-button>
+    </view>
+    <view class="goRegister" bindtap="goRegister">新用户注册</view>
+
+
+  </view>
+
+</view>

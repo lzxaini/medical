@@ -1,0 +1,29 @@
+.van-nav-bar{
+  padding-top: 0 !important;
+}
+
+.content{
+  text-indent:2em;
+  width: 90%;
+  margin: 30rpx auto;
+  line-height: 60rpx;
+}
+.van-nav-bar__right{
+  color: #000!important;
+}
+
+.van-icon-like-o{
+
+  zoom: 3;
+  color: pink;
+}
+
+.bottom{
+  width: 100vw;
+  height: 200rpx;
+  
+  .item{
+    margin: 20rpx;
+    color: lightgray;
+  }
+}

@@ -1,0 +1,17 @@
+<!--pages/login/login.wxml-->
+<view class="login">
+  <view class="main">
+    <van-cell-group>
+      <view>
+        <span style="color:#646566;font-size: 14px;margin:0  50rpx 0 30rpx; ">上传头像：</span>
+        <van-uploader deletable file-list="{{ fileList }}" max-count="1" accept="image" bind:after-read="afterRead" bind:delete="delete" />
+      </view>
+      <van-field custom-class="userName" model:value="{{ userName }}" label="用户名" placeholder="请输入用户名" error-message="{{showUserError}}" />
+    </van-cell-group>
+    <view class="box">
+      <van-button color="#195ED7" type="info" custom-class="loginBtn" bind:click="doUpdate" size="large">确认更改</van-button>
+    </view>
+  </view>
+</view>
+<van-notify id="van-notify" />
+<van-dialog id="van-dialog" confirm-button-color="#195ED7" />

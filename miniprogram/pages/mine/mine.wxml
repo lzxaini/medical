@@ -1,0 +1,30 @@
+<view class="Info" wx:if="{{userName}}">
+  <view  >
+    <view class="topArea">
+    </view>
+    <view class="bottomArea">
+      <view class="avator">
+    <image style="width: 100%;height: 100%;border-radius: 50%;" src="{{avatorUrl}}" mode=""/>
+  </view>
+  <view style="margin-left:40rpx;margin-bottom:80rpx;font-weight: bold;font-size: 20px;font-family: SourceHanSansSC-bold;color: #fff;">{{userName}}</view>
+    </view>
+  </view>
+</view>
+<van-skeleton title row="3" wx:else=""/>
+<view class="navList">
+  <view class="item" bindtap="changeInfo">
+   <view style="margin-left: 30rpx;" >
+    修改个人信息
+   </view>
+   <van-icon name="arrow"  style="position: absolute;right: 1rem;"/>
+  </view>
+  <view class="item" bindtap="goback">
+    <view style="margin-left: 30rpx;" >
+    退出登录
+   </view>
+   <van-icon name="arrow"  style="position: absolute;right: 1rem;"/>
+  </view>
+  <!-- <view class="item">
+  </view> -->
+
+</view>
