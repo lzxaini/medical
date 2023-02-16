@@ -5,8 +5,11 @@ var logger = require('morgan');
 var express = require('express');
 var path = require('path');
 var { authJwt, tokenInterceptor } = require('./utils/jwtConfig')
+const cors = require("cors");
+
 const app = express();
 
+app.use(cors()); //使用cors中间件
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
@@ -19,7 +22,6 @@ var uploadFileRouter = require('./routes/uploadFile.js');
 var topicRouter = require('./routes/topic.js');
 var pushRouter = require('./routes/push.js');
 var informRouter = require('./routes/inform.js');
-
 app.use('/api/user', userRouter);
 app.use('/api/login', loginRouter);
 app.use('/api/upload', uploadFileRouter);
