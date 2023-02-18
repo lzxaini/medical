@@ -2,7 +2,7 @@
  * @Author: lzx
  * @Date: 2023-02-11 13:47:52
  * @LastEditors: lzx
- * @LastEditTime: 2023-02-14 16:27:21
+ * @LastEditTime: 2023-02-18 21:11:23
  * @Description: Fuck Bug
  * @FilePath: \medical\medical-service\routes\user.js
  */
@@ -91,6 +91,62 @@ router.post('/update', function (req, res, next) {
         code: 0,
         data: null,
         message: '修改失败！'
+      })
+    }
+  })
+
+});
+
+// 查询用户列表
+router.get('/list', function (req, res, next) {
+  // 检测用户是否存在
+  connection.query('select * from user', [], function (error, results, fields) {
+    if (error) throw error // 错误抛出
+    if (results.length > 0) {
+      res.send({
+        code: 0,
+        data: results,
+        message: '获取成功！'
+      })
+    } else {
+      res.send({
+        code: 0,
+        data: null,
+        message: '暂无数据或查询错误！'
+      })
+    }
+  })
+});
+
+// 删除用户
+router.get('/deleted', function (req, res, next) {
+  if (!req.query.delId) {
+    return res.send({
+      code: 9999,
+      data: null,
+      message: '参数为空！'
+    })
+  }
+  // 删除
+  connection.query(`DELETE FROM user WHERE id=${req.query.delId}`, function (error, results, fields) {
+    if (error) throw error // 错误抛出
+    if (results && results.affectedRows > 0) {
+      res.send({
+        code: 0,
+        data: null,
+        message: '删除成功！'
+      })
+    } else if (results.affectedRows === 0) {
+      res.send({
+        code: 0,
+        data: null,
+        message: '数据不存在！'
+      })
+    } else {
+      res.send({
+        code: 0,
+        data: null,
+        message: '删除失败！'
       })
     }
   })
