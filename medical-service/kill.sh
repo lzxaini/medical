@@ -1,1 +1,1 @@
-kill -9 `netstat -nap |grep 3000 |grep -v grep| awk '{print $7}' |awk -F/ '{print $1}'`
+kill -9 `netstat -nap |grep 8099 |grep -v grep| awk '{print $7}' |awk -F/ '{print $1}'`
